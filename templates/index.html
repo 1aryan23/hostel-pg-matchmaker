@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hostel Matchmaker</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0,255,255,0.15) 20%, transparent 80%);
+            z-index: -1;
+            animation: pulse 5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.6; }
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 10vh;
+        }
+
+        .glow-text {
+            font-size: 3em;
+            color: #39ff14;
+            text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #ffffffb0;
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            width: 250px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px 25px;
+            font-size: 1em;
+            border: none;
+            border-radius: 8px;
+            background-color: #ff00cc;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 0 10px #ff00cc, 0 0 20px #ff00cc;
+            transition: transform 0.2s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #ff00cc, 0 0 30px #ff00cc;
+        }
+
+        .credits {
+            position: fixed;
+            bottom: 20px;
+            right: 25px;
+            font-size: 0.95em;
+            color: #00ffe0;
+            text-shadow: 0 0 5px #00ffe0, 0 0 10px #00ffe0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-overlay"></div>
+    <div class="container">
+        <h1 class="glow-text">Hostel / PG Matchmaker</h1>
+        <p class="subtitle">Find your best hostel or PG mate match instantly</p>
+        <form method="POST" action="/match">
+            <input type="text" name="phone" placeholder="Enter your phone number" required><br>
+            <button type="submit">Find My Match</button>
+        </form>
+    </div>
+
+    <div class="credits">
+        Aryan Thakur (first year)<br>
+        Akshit Raj (second year)
+    </div>
+</body>
+</html>
+

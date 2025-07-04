@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Matches</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #ffffff;
+        }
+
+        .bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0,255,255,0.12) 20%, transparent 80%);
+            z-index: -1;
+            animation: pulse 5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.7; }
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .glow-text {
+            font-size: 3em;
+            color: #00ffc8;
+            text-shadow: 0 0 10px #00ffc8, 0 0 20px #00ffc8;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #ffffffa0;
+            margin-bottom: 30px;
+        }
+
+        .match-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 0 15px #ff00ff60, 0 0 25px #00fff860;
+            color: #fff;
+            text-align: left;
+            font-size: 1em;
+            backdrop-filter: blur(5px);
+        }
+
+        .match-card p {
+            margin: 8px 0;
+            line-height: 1.5;
+            text-shadow: 0 0 5px #00ffcc;
+        }
+
+        strong {
+            color: #ff57f7;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-overlay"></div>
+    <div class="container">
+        <h1 class="glow-text">Your Top 2 Matches</h1>
+        <p class="subtitle">Here are your most compatible hostel/PG mates</p>
+        {% for match in matches %}
+        <div class="match-card">
+            <p><strong>Name:</strong> {{ match['Full Name'] }}</p>
+            <p><strong>Phone:</strong> {{ match['Contact Number(Whatsapp)'] }}</p>
+            <p><strong>Shared Interests:</strong> {{ match['Shared Interests'] }}</p>
+            <p><strong>Match Score:</strong> {{ match['score'] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
