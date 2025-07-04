@@ -73,14 +73,32 @@
             box-shadow: 0 0 15px #ff00cc, 0 0 30px #ff00cc;
         }
 
-        .credits {
+        /* Built By Box */
+        .built-by-box {
             position: fixed;
             bottom: 20px;
-            right: 25px;
-            font-size: 0.95em;
-            color: #00ffe0;
-            text-shadow: 0 0 5px #00ffe0, 0 0 10px #00ffe0;
+            right: 20px;
+            background-color: rgba(0, 255, 200, 0.1);
+            border: 1px solid #00ffc8;
+            border-radius: 12px;
+            padding: 15px 20px;
+            box-shadow: 0 0 10px #00ffc8;
+            text-align: center;
+            backdrop-filter: blur(6px);
             font-family: 'Courier New', Courier, monospace;
+            color: #00ffc8;
+        }
+
+        .built-by-box h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            text-shadow: 0 0 6px #00ffc8;
+            margin-bottom: 6px;
+        }
+
+        .built-by-box p {
+            margin: 2px 0;
+            font-size: 0.95rem;
         }
     </style>
 </head>
@@ -96,10 +114,11 @@
         </form>
     </div>
 
-    <div class="credits">
-        Aryan Thakur (first year)<br>
-        Akshit Raj (second year)
+    <!-- Built By Box -->
+    <div class="built-by-box">
+        <h3>Built By</h3>
+        <p>Aryan Thakur (First Year)</p>
+        <p>Akshit Raj (Second Year)</p>
     </div>
 </body>
 </html>
-
